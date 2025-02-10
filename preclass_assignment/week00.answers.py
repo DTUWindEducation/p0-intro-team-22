@@ -13,13 +13,14 @@ import matplotlib as plt
 
 def greet():
     name = input("Enter your word: ")
+    print("\nEXERCISE 1")
+    print("Hello, " + var + "!")
     
     return name
 
 var = greet()
 
-print("\nEXERCISE 1")
-print("Hello, " + var + "!")
+
 
 "EXERCISE 2"
 """Goldilocks is 135 cm tall, and she is very picky about the size of her bed. If the bed is shorter than

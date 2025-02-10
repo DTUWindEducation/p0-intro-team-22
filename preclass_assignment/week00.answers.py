@@ -93,7 +93,7 @@ are untouched and “bad” values are set to -999. """
 
 def clean_pitch(measurements,status):
     for i in range(len(measurements)):
-        if measurements[i] < 0:
+        if measurements[i] < 0 or measurements[i] < 0:
             if status[i] > 0:
                 measurements[i] = -999
         

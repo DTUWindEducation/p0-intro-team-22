@@ -15,12 +15,33 @@ def test_greet(capsys):
 
 
 
+# def test_goldilocks(capsys):
+#     """Check goldilocks returns expected output"""
+#     # given
+#     inp = [139, 140, 151, 150]; # Length of the bed
+#     res = ['Too small!\n', 'Just right. :)\n', 'Too large!\n', 'Just right. :)\n']
+    
+#     # when
+#     for i in range(len(inp)):
+#         fxn.goldilocks(inp(i)) # Function to check the preference on the length of bed
+#         captured = capsys.readouterr() # Stores the output of the function to be printed
+
+#      #then   
+#         assert captured.out == res(i)  # check that the printed message is was what we expect
+    
+
 def test_goldilocks(capsys):
     """Check goldilocks returns expected output"""
+    
     # given
+    inp = 139; # Length of the bed
+    
     # when
+    fxn.goldilocks(inp) # Function to check the preference on the length of bed
+    captured = capsys.readouterr() # Stores the output of teh function to be printed
+
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests goldilocks
+    assert captured.out == 'Too small!\n'  # check that the printed message is was what we expect
 
 
 def test_square_list():
@@ -37,15 +58,25 @@ def test_square_list():
 def test_fibonacci_stop():
     """Check fibonacci functions works as expected."""
     # given
-    # given
+    inp = 30 # test input to the function
+    exp_out = [1, 1, 2, 3, 5, 8, 13, 21] # Expected output
+    
     # when
+    out = fxn.fibonacci_stop(inp) # Actual Output
+
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests fibonacci_stop
+    assert exp_out == out # If the actual output is not equal to the expected output, function returns an error
 
 
 def test_clean_pitch():
     """Check clean_pitch works as expected."""
     # given
+    inp1 = [-1, 2, 6, 95] # Input for measurements
+    inp2 = [1, 0, 0, 0] # Input for status
+    exp_out = [-999, 2, 6, 95] # Expected output
+
     # when
+    out = fxn.clean_pitch(inp1, inp2) # Actual output
+
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests clean_pitch
+    assert exp_out == out # If the actual output is not equal to the expected output, function returns an error

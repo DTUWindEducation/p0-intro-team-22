@@ -11,37 +11,37 @@ def test_greet(capsys):
     fxn.greet(name)  # greet them
     captured = capsys.readouterr()  # capture what would have been printed to screen
     # then
-    assert captured.out == 'Hello, world!\n'  # check that the greeting was what we expect
+    assert captured.out == 'Hello, world !\n'  # check that the greeting was what we expect
 
 
-
-# def test_goldilocks(capsys):
-#     """Check goldilocks returns expected output"""
-#     # given
-#     inp = [139, 140, 151, 150]; # Length of the bed
-#     res = ['Too small!\n', 'Just right. :)\n', 'Too large!\n', 'Just right. :)\n']
-    
-#     # when
-#     for i in range(len(inp)):
-#         fxn.goldilocks(inp(i)) # Function to check the preference on the length of bed
-#         captured = capsys.readouterr() # Stores the output of the function to be printed
-
-#      #then   
-#         assert captured.out == res(i)  # check that the printed message is was what we expect
-    
 
 def test_goldilocks(capsys):
     """Check goldilocks returns expected output"""
-    
     # given
-    inp = 139; # Length of the bed
+    inp = [139, 140, 151, 150]; # Length of the bed
+    res = ['Too small!\n', 'Just right!\n', 'Too large!\n', 'Just right!\n'] # Output to be printed for respective input lengths
     
     # when
-    fxn.goldilocks(inp) # Function to check the preference on the length of bed
-    captured = capsys.readouterr() # Stores the output of teh function to be printed
+    for length, exp_out in zip(inp,res):
+        fxn.goldilocks(length) # Function to check the preference on the length of bed
+        captured = capsys.readouterr() # Stores the output of the function to be printed
 
-    # then
-    assert captured.out == 'Too small!\n'  # check that the printed message is was what we expect
+     #then   
+        assert captured.out == exp_out  # check that the printed message is was what we expect
+    
+
+# def test_goldilocks(capsys):
+#     """Check goldilocks returns expected output"""
+    
+#     # given
+#     inp = 139; # Length of the bed
+    
+#     # when
+#     fxn.goldilocks(inp) # Function to check the preference on the length of bed
+#     captured = capsys.readouterr() # Stores the output of teh function to be printed
+
+#     # then
+#     assert captured.out == 'Too small!\n'  # check that the printed message is was what we expect
 
 
 def test_square_list():
